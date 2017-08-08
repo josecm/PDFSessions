@@ -8,10 +8,6 @@ var parentMenu = "Window";
 var openMenu = "&Open Session"
 var deleteMenu = "&Delete Session"
 
-function dummy(name){
-	app.alert("load " + name, 3);
-}
-
 // Dialog Definition 
 var oDlg = {
 	strName: "SessionName", 
@@ -58,7 +54,6 @@ function AddSession(name){
  Loading Saved Tabs
 */
 
-console.show();
 
 function LoadTabs(session) {
 
@@ -69,7 +64,6 @@ function LoadTabs(session) {
   var flat = global.tabs_opened[session].split(delim);
   for (i = 0; i < flat.length; i += 2) {
     try {
-	  console.println(flat[i]);
       app.openDoc(flat[i]);
       app.execMenuItem("FirstPage");
       for (ii = 0; ii < flat[i + 1]; ++ii) {
